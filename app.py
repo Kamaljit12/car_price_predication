@@ -4,6 +4,7 @@ import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import base64
 
 
 
@@ -85,7 +86,7 @@ if  side_bar_selected == 'Price Prediction':
     prediction = knn_model.predict(main_df)
 
     if st.button("Predict"):
-        st.success(f"{np.round(prediction[0], 2)} $")
+        st.success(np.round(prediction[0], 2))
 
 # ===========================================================================================
 
@@ -168,5 +169,41 @@ elif side_bar_selected == 'Analysis':
     top_10=df[df['Leather_interior'] == 'Yes'][['Model', 'Leather_interior', 'Price']].head(10)
     st.dataframe(top_10, hide_index=True)
 else:
-    st.warning("Work is in progress !")
+    st.title("Thanks a lot to visit on this Page")
+    st.markdown("""<p style = color:#119730;font-size:20px;>My name is kamal. i am a data scienties, generative Ai and Machine learning Engineer</p>""",\
+                 unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
+
+    with col1:
+        image_path = "img/GitHub-Logo.png"
+        with open(image_path, "rb") as image_file:
+            encoded_image = base64.b64encode(image_file.read()).decode()
+                # Create the HTML for the image with a link    
+        html = f"""
+        <a href="https://github.com/Kamaljit12/">
+            <img src="data:image/png;base64,{encoded_image}" width="80">
+        </a>
+        """
+
+        # Display the image with the link in Streamlit
+        st.markdown(html, unsafe_allow_html=True)
+
+
+
+        with col2:
+            image_path = "img/linkedin-icon.jpg"
+            with open(image_path, "rb") as image_file:
+                encoded_image = base64.b64encode(image_file.read()).decode()
+                    # Create the HTML for the image with a link    
+            html = f"""
+            <a href="https://shorturl.at/XdBUE">
+                <img src="data:image/png;base64,{encoded_image}" width="50">
+            </a>
+            """
+
+            # Display the image with the link in Streamlit
+            st.markdown(html, unsafe_allow_html=True)
+
+
 
