@@ -125,7 +125,7 @@ elif side_bar_selected == 'About Datasets':
     # =================== visualization ================
 
 
-    st.set_option('deprecation.showPyplotGlobalUse', False)
+    # st.set_option('deprecation.showPyplotGlobalUse', False)
 
     st.subheader("Density plot of each numerical features")
     for col in numerical_features:
