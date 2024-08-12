@@ -8,7 +8,7 @@ import seaborn as sns
 
 
 ## ========================= models==================
-rf_model = pickle.load(open("RandomForest.pkl", 'rb'))
+# rf_model = pickle.load(open("RandomForest.pkl", 'rb'))
 knn_model = pickle.load(open("K-Neighbors.pkl", 'rb'))
 scaler_model = pickle.load(open("scaler.pkl", "rb"))
 ohe_encoder_model = pickle.load(open("ohe_encoder.pkl", "rb"))
