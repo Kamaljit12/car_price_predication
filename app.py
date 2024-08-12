@@ -82,7 +82,7 @@ if  side_bar_selected == 'Price Prediction':
 
 
     main_df = pd.concat((pd.DataFrame(encoded_data), pd.DataFrame(scaled_data)), axis=1)
-    prediction = rf_model.predict(main_df)
+    prediction = knn_model.predict(main_df)
 
     if st.button("Predict"):
         st.success(np.round(prediction[0], 2))
