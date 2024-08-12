@@ -85,7 +85,7 @@ if  side_bar_selected == 'Price Prediction':
     prediction = knn_model.predict(main_df)
 
     if st.button("Predict"):
-        st.success(np.round(prediction[0], 2))
+        st.success(f"{np.round(prediction[0], 2)} $")
 
 # ===========================================================================================
 
